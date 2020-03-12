@@ -9,6 +9,7 @@ public class Variable {
 		float cpu = 2.9F;
 		double os = 10.136;
 		char web = 9784;
+
 		//Printing them out
 		System.out.println(web + "  Hi, do you have PC? - " + isPc + "!");
 		System.out.println("What are the specs?");
@@ -18,5 +19,4 @@ public class Variable {
 		System.out.println(" OS: " + os);
 		System.out.println(" Year: " + year);
 	}
-
 }

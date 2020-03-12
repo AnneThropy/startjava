@@ -16,12 +16,11 @@ public class Calculator {
 		System.out.println(" '^' - for raising to power");
 		System.out.println(" '%' - to count % of");
 
-		boolean isProceed = false;
-		do {
-			isProceed = false; //clearing up the repeating variable
+		Scanner input = new Scanner (System.in);
+		String response = "";
 
+		do {
 			//getting user data - all steps separately to avoid parcing strings we didn't learn yet
-			Scanner input = new Scanner (System.in);
 			System.out.println("Enter the first number");
 			int firstNumber = input.nextInt();
 
@@ -33,35 +32,34 @@ public class Calculator {
 
 			//calculating
 			//showing response separately in every calculations to be able to assign different data types to the variables as well as cuatomize the message
-
 			if (operator.equals("+")) {
 				// sum here
 				int result = firstNumber + secondNumber;
-				System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+				System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 			} else if (operator.equals("-")) {
 				// minus here
 				int result = firstNumber - secondNumber;
-				System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+				System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 			} else if (operator.equals("*")) {
 				// multiply here
 				int result = firstNumber * secondNumber;
-				System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+				System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 			} else if (operator.equals("/")) {
 				// divide here - two options to show up nicely the result with or without deximals
 				if (firstNumber % secondNumber == 0) {
 					int result = firstNumber / secondNumber;
-					System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+					System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 				} else {
 					double result = (double) firstNumber / secondNumber;
-					System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+					System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 				}
 			} else if (operator.equals("^")) {
 				// raise to power here
 				long result = 1L;
 				for (int i = 1; i <= secondNumber; i++) {
-					result = result * firstNumber;
+					result *= firstNumber;
 				}
-				System.out.println(calc + " " + firstNumber +" "+ operator +" "+ secondNumber + " = " + result);
+				System.out.println(calc + " " + firstNumber + " " + operator + " " + secondNumber + " = " + result);
 			} else if (operator.equals("%")) {
 				// calculate percentage here
 				double result = (secondNumber * firstNumber) / 100.0;
@@ -74,11 +72,8 @@ public class Calculator {
 			// Asking to repeat
 			input.nextLine(); //making place for nextLine to work after nextInt
 			System.out.println("Do you want to try again? Type 'Y' to try again. Use any key to exit");
-			String response = input.nextLine();
+			response = input.nextLine();
 
-			if (response.equalsIgnoreCase("Y")) {
-				isProceed = true;
-			}
-		} while (isProceed);
+		} while (response.equalsIgnoreCase("Y"));
 	}
 }
