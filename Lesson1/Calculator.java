@@ -2,31 +2,34 @@ import java.util.Scanner;
 
 public class Calculator {
 	public static void main(String[] args) {
-
-		boolean proceed = false;
-
+		//declaring symbols
 		char hint = 9971;
 		char alarm = 10071;
 		char calc = 9989;
 
 		//Welcome + instructions message:
+		System.out.println(hint + "Welcome to Calculator!\nHere are the operators you can use:");
+		System.out.println(" '+' - to sum");
+		System.out.println(" '-' - to minus");
+		System.out.println(" '*' - to multiply");
+		System.out.println(" '/' - to divide");
+		System.out.println(" '^' - for raising to power");
+		System.out.println(" '%' - to count % of");
 
-		System.out.println(hint + "Welcome to Calculator!\nHere are the operators you can use:\n '+' - to sum\n '-' - to minus\n '*' - to multiply\n '/' - to divide\n '^' - for raising to power\n '%' - to count % of");
-
+		boolean isProceed = false;
 		do {
-			proceed = false; //clearing up the repeating variable
+			isProceed = false; //clearing up the repeating variable
+
 			//getting user data - all steps separately to avoid parcing strings we didn't learn yet
-			Scanner firstNum = new Scanner (System.in);
+			Scanner input = new Scanner (System.in);
 			System.out.println("Enter the first number");
-			int firstNumber = firstNum.nextInt();
+			int firstNumber = input.nextInt();
 
-			Scanner operatorValue = new Scanner (System.in);
 			System.out.println("Enter the operator");
-			String operator = operatorValue.next();
+			String operator = input.next();
 
-			Scanner secondNum = new Scanner (System.in);
 			System.out.println("Enter the second number");
-			int secondNumber = secondNum.nextInt();
+			int secondNumber = input.nextInt();
 
 			//calculating
 			//showing response separately in every calculations to be able to assign different data types to the variables as well as cuatomize the message
@@ -69,14 +72,13 @@ public class Calculator {
 			}
 
 			// Asking to repeat
-			Scanner askToProceed = new Scanner (System.in);
+			input.nextLine(); //making place for nextLine to work after nextInt
 			System.out.println("Do you want to try again? Type 'Y' to try again. Use any key to exit");
-			String response = askToProceed.nextLine();
+			String response = input.nextLine();
 
 			if (response.equalsIgnoreCase("Y")) {
-				proceed = true;
+				isProceed = true;
 			}
-
-		} while (proceed == true);
+		} while (isProceed);
 	}
 }
