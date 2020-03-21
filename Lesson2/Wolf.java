@@ -1,33 +1,31 @@
 public class Wolf {
 
-// пол, кличка, вес, возраст, окрас
 	String sex = "male";
 	String name = "Loki";
 	float weight = 41.75f;
 	int age = 6;
 	String color = "grey";
 
-//идти, сидеть, бежать, выть, охотиться
 	void go() {
-		System.out.println("Loki goes");
+		System.out.println(name + " goes");
 	}
 
 	boolean sit() {
-		System.out.println("Loki is sitting");
+		System.out.println(name + " is sitting");
 		return true;
 	}
 
 	void run() {
-		System.out.println("Loki runs");
+		System.out.println(name + " runs");
 	}
 
 	String howl() {
-		System.out.println("Loki howls");
+		System.out.println(name + " howls");
 		return("Awwooooo");
 	}
 
 	boolean hunt() {
-		System.out.println("Loki hunts");
+		System.out.println(name + " hunts");
 		return true;
 	}
 }
