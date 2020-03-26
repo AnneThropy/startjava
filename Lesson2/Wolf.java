@@ -10,6 +10,7 @@ public class Wolf {
 	public String getSex() {
 		return sex;
 	}
+
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
@@ -18,6 +19,7 @@ public class Wolf {
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		if(name == "") {
 			System.out.println("Empty string");
@@ -30,6 +32,7 @@ public class Wolf {
 	public float getWeight() {
 		return weight;
 	}
+
 	public void setWeight(float weight) {
 		this.weight = weight;
 	}
@@ -38,6 +41,7 @@ public class Wolf {
 	public int getAge() {
 		return age;
 	}
+
 	public void setAge(int age) {
 		if(age > 8) {
 			System.out.println("Age is incorrect");
@@ -50,6 +54,7 @@ public class Wolf {
 	public String getColor() {
 		return color;
 	}
+	
 	public void setColor(String color) {
 		this.color = color;
 	}
